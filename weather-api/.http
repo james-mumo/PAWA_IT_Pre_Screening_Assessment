@@ -1,0 +1,11 @@
+### Get Current Weather
+GET http://127.0.0.1:8000/api/weather?city=Nairobi&units=metric
+Accept: application/json
+
+
+### Search
+GET http://127.0.0.1:8000/api/search?query=Nairobi
+
+### Test Forecast Endpoint
+GET http://127.0.0.1:8000/api/forecast?city=London&units=metric HTTP/1.1
+Accept: application/json
