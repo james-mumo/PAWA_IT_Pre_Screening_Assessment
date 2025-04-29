@@ -1,4 +1,3 @@
-// Sections/ThreeDayForecast.tsx
 "use client";
 import { useState, useEffect } from "react";
 import { convertTemperature } from "../utils/temperatureConverter";
@@ -89,7 +88,30 @@ export default function ThreeDayForecast({
     setProcessedForecast(processedData);
   }, [forecast]);
 
- 
+  // function to create weather icon maps
+  const getWeatherIcon = (iconCode: string) => {
+    const iconMap: { [key: string]: string } = {
+      "01d": "☀️", // clear sky day
+      "01n": "🌙", // clear sky night
+      "02d": "⛅", // few clouds day
+      "02n": "☁️", // few clouds night
+      "03d": "☁️", // scattered clouds
+      "03n": "☁️",
+      "04d": "☁️", // broken clouds
+      "04n": "☁️",
+      "09d": "🌧️", // shower rain
+      "09n": "🌧️",
+      "10d": "🌦️", // rain day
+      "10n": "🌧️", // rain night
+      "11d": "⛈️", // thunderstorm
+      "11n": "⛈️",
+      "13d": "❄️", // snow
+      "13n": "❄️",
+      "50d": "🌫️", // mist
+      "50n": "🌫️",
+    };
+    return iconMap[iconCode] || "🌡️";
+  };
 
   // Convert temperature based on unit
   const formatTemp = (temp: number) => {
