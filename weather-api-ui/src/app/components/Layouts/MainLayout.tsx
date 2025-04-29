@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import SearchHeader from "../Sections/SearchHeader";
 import ThreeDayForecast from "../Sections/ThreeDayForecast";
 import StatsGrid from "../Sections/StatsGrid";
-import { getCurrentWeather, getForecast } from "../utils/api";
+import { getCurrentWeather, getForecast } from "../../utils/api";
 import SidebarWeather from "../Sections/SidebarWeather";
 
 export default function MainLayout() {
@@ -44,7 +44,7 @@ export default function MainLayout() {
       setApiData({
         currentWeather: weather,
         forecast: forecastData.list || [],
-        fetchedWithUnit: "metric", 
+        fetchedWithUnit: "metric",
       });
     } catch (err) {
       console.error("Error fetching weather data:", err);
@@ -68,7 +68,7 @@ export default function MainLayout() {
         <SidebarWeather
           currentWeather={currentWeather}
           unit={unit}
-          apiUnit="metric" 
+          apiUnit="metric"
         />
       </div>
 

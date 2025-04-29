@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { convertTemperature } from "../utils/temperatureConverter";
+import { convertTemperature } from "../../utils/temperatureConverter";
 
 type ForecastDay = {
   date: string;

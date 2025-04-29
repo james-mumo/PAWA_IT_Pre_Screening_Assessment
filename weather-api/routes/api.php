@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+// define the routes for weather data, forecast, and city search
 Route::get('/weather', [WeatherController::class, 'current']);
 Route::get('/forecast', [WeatherController::class, 'forecast']);
 Route::get('/search', [WeatherController::class, 'search']);
