@@ -40,17 +40,16 @@ export default function MainLayout() {
       const forecastData = await getForecast(city);
       setForecast(forecastData.list || []);
 
-      // Store the API data and the unit it was fetched with
-      // Since your backend API doesn't handle units, we'll assume it returns metric by default
+      // save the API data in the ApiData use state
       setApiData({
         currentWeather: weather,
         forecast: forecastData.list || [],
-        fetchedWithUnit: "metric", // Assuming the API always returns metric
+        fetchedWithUnit: "metric", 
       });
     } catch (err) {
       console.error("Error fetching weather data:", err);
       setError("Failed to fetch weather data. Please try again.");
-      // Clear previous data on error
+      // here i am clearing previous data on error
       setCurrentWeather(null);
       setForecast([]);
     } finally {
@@ -60,7 +59,6 @@ export default function MainLayout() {
 
   const handleUnitChange = (newUnit: "metric" | "imperial") => {
     setUnit(newUnit);
-    // No need to re-fetch data as we'll convert the temperatures in the components
   };
 
   return (
@@ -70,11 +68,11 @@ export default function MainLayout() {
         <SidebarWeather
           currentWeather={currentWeather}
           unit={unit}
-          apiUnit="metric" // Assuming API always returns metric
+          apiUnit="metric" 
         />
       </div>
 
-      {/* RIGHT Content */}
+      {/* RIGHT side components */}
       <div className="w-full lg:w-4/5 p-4 lg:p-2 overflow-y-auto flex flex-col h-screen">
         <SearchHeader
           onSearch={handleSearch}
