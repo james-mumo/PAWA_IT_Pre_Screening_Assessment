@@ -89,12 +89,13 @@ I have created a **Weather Application** using **Next.js** for the frontend and 
      ```
    - The backend will be available at `http://localhost:8000`.
 
-## Expected Outcome
+## Functionalities The App Provides
 
-- The frontend should provide a clean and visually appealing interface where users can search for a city and see weather information.
-- The application should show the current weather, 3-day forecast, wind, and humidity information.
-- Users should be able to toggle between Celsius and Fahrenheit.
+- The app offers a user-friendly and visually appealing interface where users can search for a city and view detailed weather information.
+- The application displays the current weather, a 3-day forecast, and key details like wind speed and humidity.
+- Users have the option to switch between Celsius and Fahrenheit for temperature units.
+
 
 ---
 
-**Hope This was Good Enough to be Invited Second Round Interview!!**
+**Hope This was Good Enough to be Invited to the Second Round Interview!!**
